@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import helmet from "helmet";
 
 import path from "path";
 
@@ -18,8 +19,12 @@ const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser());
-
-
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+    crossOriginEmbedderPolicy: false,
+  })
+);
 app.use(
     cors({
         origin: "http://localhost:5173",
