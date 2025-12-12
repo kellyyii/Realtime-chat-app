@@ -34,4 +34,7 @@
     "tailwindcss": "^4.1.14",
     "vite": "^7.1.7"
   }
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.18.0"  // Use latest Rollup version; check yours with `npm ls rollup`
+  }
 }
